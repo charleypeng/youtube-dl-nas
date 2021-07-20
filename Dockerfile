@@ -2,7 +2,7 @@
 # https://github.com/hyeonsangjeon/youtube-dl-nas.git
 
 FROM python:3-onbuild
-LABEL maintainer="charleypeng" version="1.0" org.lable-schema.url="https://github.com/charleypeng/youtube-dl-nas"
+LABEL maintainer="charleypeng" version="1.2" org.lable-schema.url="https://github.com/charleypeng/youtube-dl-nas"
 
 # Install ffmpeg.
 #https://unix.stackexchange.com/questions/508724/failed-to-fetch-jessie-backports-repository
@@ -19,6 +19,8 @@ COPY /run.sh /
 RUN chmod +x /usr/bin/subber && \
      dos2unix /usr/bin/subber && \
      ln -s /usr/src/app/downfolder / && \
+     mkdir -p /usr/src/app/downfolder/video/ && \
+     mkdir -p /usr/src/app/downfolder/audio/ &&  \
      chmod +x /run.sh && \
      dos2unix /run.sh
 
@@ -28,7 +30,5 @@ EXPOSE 8080
 
 VOLUME ["/downfolder"]
 
-RUN mkdir -p /usr/src/app/downfolder/video
-RUN mkdir -p /usr/src/app/downfolder/audio
 CMD [ "/bin/bash", "/run.sh" ]
 #CMD [ "python", "-u", "./youtube-dl-server.py" ]
