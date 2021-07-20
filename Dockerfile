@@ -28,5 +28,7 @@ EXPOSE 8080
 
 VOLUME ["/downfolder"]
 
+RUN mkdir -p /usr/src/app/downfolder/video
+RUN mkdir -p /usr/src/app/downfolder/audio
 CMD [ "/bin/bash", "/run.sh" ]
 #CMD [ "python", "-u", "./youtube-dl-server.py" ]
