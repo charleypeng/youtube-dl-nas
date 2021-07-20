@@ -94,22 +94,5 @@ curl -X POST http://localhost:8080/youtube-dl/rest \
 docker exec -i -t youtube-dl /bin/bash
 ```
 
-##### Example, when using synology docker provisioning platform
-
-- docker volume mount setting 
-
-![screenshot1](https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/volume_set_synology.png?raw=true)
-
-
-
-- ID, Password setting to docker environment
-![screenshot1](https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/id_pw_set_synology.png?raw=true)
-
-### Reference
-[1]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/youtube-dl-server-login.png
-[2]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/youtube-dl-server.png
-[3]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/volume_set_synology.png
-[4]: https://github.com/hyeonsangjeon/youtube-dl-nas/blob/master/pic/id_pw_set_synology.png
-
 `[1]`. https://docs.docker.com/engine/reference/commandline/cli/#environment-variables
 

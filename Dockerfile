@@ -16,11 +16,9 @@ RUN apt-get install -y libav-tools vim dos2unix && \
 
 COPY /subber /usr/bin/subber 
 COPY /run.sh /
-RUN chmod +x /usr/bin/subber && \
+RUN  chmod +x /usr/bin/subber && \
      dos2unix /usr/bin/subber && \
      ln -s /usr/src/app/downfolder / && \
-     mkdir -p /usr/src/app/downfolder/video/ && \
-     mkdir -p /usr/src/app/downfolder/audio/ &&  \
      chmod +x /run.sh && \
      dos2unix /run.sh
 
@@ -30,5 +28,7 @@ EXPOSE 8080
 
 VOLUME ["/downfolder"]
 
+RUN  mkdir /usr/src/app/downfolder/video/ && \
+     mkdir /usr/src/app/downfolder/audio/
 CMD [ "/bin/bash", "/run.sh" ]
 #CMD [ "python", "-u", "./youtube-dl-server.py" ]
