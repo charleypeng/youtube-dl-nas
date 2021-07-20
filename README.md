@@ -56,18 +56,18 @@ The docker volume parameter `-v` is used by the queue operation to process the d
 
 ##### To run docker, excute this command in a ternimal:
 ```shell
-docker run -d --name youtube-dl -e MY_ID=modenaf360 -e MY_PW=1234  -v /volume2/youtube-dl:/downfolder -p 8080:8080 modenaf360/youtube-dl-nas
+docker run -d --name youtube-dl -e MY_ID=yourname -e MY_PW=1234  -v /volume2/youtube-dl:/downfolder -p 8080:8080 charleypeng/youtube-dl-nas
 ```
 
 ##### If want set TimeZone, example using in South-Korea web content 
 ```shell
-docker run -d --name youtube-dl -e TZ=Asia/Seoul -e MY_ID=modenaf360 -e MY_PW=1234 -v /volume2/youtube-dl:/downfolder -p 8080:8080 modenaf360/youtube-dl-nas
+docker run -d --name youtube-dl -e TZ=Asia/Seoul -e MY_ID=yourname -e MY_PW=1234 -v /volume2/youtube-dl:/downfolder -p 8080:8080 charleypeng/youtube-dl-nas
 ```
 
 ##### example, how to using docker host network and changing the application port :
 ```shell
 # use --net=host -e APP_PORT=custom_port
-docker run -d --name youtube-dl --net=host -e APP_PORT=9999 -e MY_ID=modenaf360 -e MY_PW=1234  -v /volume2/youtube-dl:/downfolder modenaf360/youtube-dl-nas
+docker run -d --name youtube-dl --net=host -e APP_PORT=9999 -e MY_ID=yourname -e MY_PW=1234  -v /volume2/youtube-dl:/downfolder charleypeng/youtube-dl-nas
 ```
 
 
